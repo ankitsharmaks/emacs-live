@@ -20,6 +20,36 @@
 ;;         M         M M  M M     .dMMM MM        .M
 ;;         MMMMMMMMMMM MMMM MMMMMMMMMMM MMMMMMMMMMMM ")
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ADDED BY ME  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(add-to-list 'load-path "~/emacs-w3m/")
+(require 'w3m-load)
+
+(defun wikipedia-search (search-term)
+  “Search for SEARCH-TERM on wikipedia”
+  (interactive
+   (let ((term (if mark-active
+                   (buffer-substring (region-beginning) (region-end))
+                 (word-at-point))))
+     (list
+      (read-string
+       (format “Wikipedia (%s):” term) nil nil term)))
+   )
+  (browse-url
+   (concat
+    “http://en.m.wikipedia.org/w/index.php?search=”
+    search-term
+    ))
+  )
+
+
+(defun hn ()
+  (interactive)
+  (w3m  “http://news.ycombinator.com”))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (message (concat "\n\n" live-ascii-art-logo "\n\n"))
 
 (add-to-list 'command-switch-alist
