@@ -48,6 +48,10 @@
   (interactive)
   (w3m  “http://news.ycombinator.com”))
 
+
+;; unset C-z.
+(global-unset-key (kbd "C-z"))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (message (concat "\n\n" live-ascii-art-logo "\n\n"))
