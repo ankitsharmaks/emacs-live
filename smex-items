@@ -1,21 +1,21 @@
 
 ;; ----- smex-history -----
 (
- buffer-menu
- Buffer-menu-select
- desktop-clear
- terminal-emulator
- eshell
- shell
- hn
+ helm-spotify
+ package-install
+ package-refresh-contents
+ customize-set-variable
+ frame-configuration-to-register
+ exit-splash-screen
+ w3m
 )
 
 ;; ----- smex-data -----
 (
- (w3m . 3)
+ (w3m . 6)
  (hn . 3)
  (wikipedia-search . 1)
- (package-install . 2)
+ (package-install . 3)
  (list-packages . 1)
  (package-list-packages . 3)
  (terminal-emulator . 11)
@@ -29,4 +29,13 @@
  (scratch . 1)
  (Buffer-menu-select . 1)
  (buffer-menu . 2)
+ (w3m-zoom-out-image . 1)
+ (set-face-font . 1)
+ (set-default-font . 3)
+ (live-set-default-font . 3)
+ (exit-splash-screen . 2)
+ (frame-configuration-to-register . 2)
+ (customize-set-variable . 1)
+ (package-refresh-contents . 1)
+ (helm-spotify . 12)
 )

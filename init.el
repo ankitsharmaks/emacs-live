@@ -23,6 +23,11 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ADDED BY ME  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+
+;;Set default font
+(set-default-font "Monospace-8")
+
+
 (add-to-list 'load-path "~/emacs-w3m/")
 (require 'w3m-load)
 
@@ -307,12 +312,28 @@
 
 ;;Open scratch on right
 (other-window 1)
-(interactive)
-(switch-to-buffer "*scratch*")
+;(interactive)
+;(switch-to-buffer "*scratch*")
+(find-file "~/.emacs.d/init.el")
 
 (window-configuration-to-register ?w))
 
 
+
+
 (setup-windows)
+
+
+;;spotify search issue
+;;helm spotify has errors if called without debug-on-error set. So i wrote this wrapper
+(defun john-spotify ()
+  "wrapper for calling spotify from keyboard shortcut and removing possibility for error"
+  (interactive)
+  (setq debug-on-error t)
+  (helm-spotify)
+  (setq debug-on-error nil))
+
+(global-set-key (kbd "C-x M-s") 'john-spotify)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (message "\n\n Pack loading completed. Your Emacs is Live...\n\n")
