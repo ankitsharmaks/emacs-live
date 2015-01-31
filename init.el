@@ -52,6 +52,34 @@
 ;; unset C-z.
 (global-unset-key (kbd "C-z"))
 
+
+
+;; C/C++ autocomplete setups
+
+; start package.el with emacs
+(require 'package)
+; add MELPA to repository list
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+; initialize package.el
+(package-initialize)
+
+; start auto-complete with emacs
+(require 'auto-complete)
+; do default config for auto-complete
+(require 'auto-complete-config)
+(ac-config-default)
+
+; start yasnippet with emacs
+(require 'yasnippet)
+(yas-global-mode 1)
+
+; java yasnippet
+(require 'java-snippets)
+
+
+;;(require 'terminal-emulator)
+;; Enable the use of the command 'terminal-emulator' without confirmation
+;;(put 'terminal-emulator 'disabled nil)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (message (concat "\n\n" live-ascii-art-logo "\n\n"))
@@ -258,4 +286,33 @@
 (when (file-exists-p custom-file)
   (load custom-file))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+
+(defun setup-windows ()
+  "Organize a series of windows for ultimate distraction."
+ ;;Open eshell on top right
+(delete-other-windows)
+(interactive)
+(eshell)
+;;split screen
+(split-window-horizontally)
+(split-window-vertically)
+
+;;Open HackerNews on bottom right
+(other-window 1)
+(w3m-goto-url "https://news.ycombinator.com")
+
+;;Open scratch on right
+(other-window 1)
+(interactive)
+(switch-to-buffer "*scratch*")
+
+(window-configuration-to-register ?w))
+
+
+(setup-windows)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (message "\n\n Pack loading completed. Your Emacs is Live...\n\n")

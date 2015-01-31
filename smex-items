@@ -1,20 +1,32 @@
 
 ;; ----- smex-history -----
 (
- list-packages
- package-install
- wikipedia-search
+ buffer-menu
+ Buffer-menu-select
+ desktop-clear
+ terminal-emulator
+ eshell
+ shell
  hn
- w3m
- cd
- 5x5
 )
 
 ;; ----- smex-data -----
 (
- (w3m . 2)
+ (w3m . 3)
  (hn . 3)
  (wikipedia-search . 1)
- (package-install . 1)
+ (package-install . 2)
  (list-packages . 1)
+ (package-list-packages . 3)
+ (terminal-emulator . 11)
+ (term . 1)
+ (clojure-test-ediff-result . 1)
+ (shell . 2)
+ (eshell . 2)
+ (shell-mode . 1)
+ (shell-script-mode . 2)
+ (desktop-clear . 2)
+ (scratch . 1)
+ (Buffer-menu-select . 1)
+ (buffer-menu . 2)
 )
