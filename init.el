@@ -335,5 +335,26 @@
 
 (global-set-key (kbd "C-x M-s") 'john-spotify)
 
+
+;;EMMS Stuff
+(require 'emms-setup)
+          (emms-all)
+          (emms-default-players)
+;; add flv and ogv
+(define-emms-simple-player mplayer '(file url)
+      (regexp-opt '(".ogg" ".mp3" ".wav" ".mpg" ".mpeg" ".wmv" ".wma"
+                    ".mov" ".avi" ".divx" ".ogm" ".asf" ".mkv" "http://" "mms://"
+                    ".rm" ".rmvb" ".mp4" ".flac" ".vob" ".m4a" ".flv" ".ogv" ".pls"))
+      "mplayer" "-slave" "-quiet" "-really-quiet" "-fullscreen")
+
+
+;;transparent
+(set-frame-parameter (selected-frame) 'alpha '(85 85))
+
+(add-to-list 'default-frame-alist '(alpha 85 85))
+
+(set-face-attribute 'default nil :background "black"
+                    :foreground "white" )
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (message "\n\n Pack loading completed. Your Emacs is Live...\n\n")

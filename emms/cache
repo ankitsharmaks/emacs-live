@@ -1,0 +1,2 @@
+;;; .emms-cache -*- mode: emacs-lisp; coding: utf-8; -*-
+(puthash "/media/danza/DeepShit/Movies/City Of God (2002).mp4" '(*track* (type . file) (name . "/media/danza/DeepShit/Movies/City Of God (2002).mp4") (metadata) (info-mtime 20842 7920 0 0) (last-played 21709 19268 876372 337000) (play-count . 2)) emms-cache-db)

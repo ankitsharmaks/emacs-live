@@ -1,12 +1,12 @@
 
 ;; ----- smex-history -----
 (
+ emms-play-file
+ terminal-emulator
+ emms-add-playlist-directory
+ helm-emms
  helm-spotify
  package-install
- package-refresh-contents
- customize-set-variable
- frame-configuration-to-register
- exit-splash-screen
  w3m
 )
 
@@ -18,7 +18,7 @@
  (package-install . 3)
  (list-packages . 1)
  (package-list-packages . 3)
- (terminal-emulator . 11)
+ (terminal-emulator . 12)
  (term . 1)
  (clojure-test-ediff-result . 1)
  (shell . 2)
@@ -37,5 +37,9 @@
  (frame-configuration-to-register . 2)
  (customize-set-variable . 1)
  (package-refresh-contents . 1)
- (helm-spotify . 12)
+ (helm-spotify . 13)
+ (helm-emms . 1)
+ (emms . 2)
+ (emms-add-playlist-directory . 1)
+ (emms-play-file . 2)
 )
